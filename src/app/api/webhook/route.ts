@@ -159,15 +159,15 @@ async function procesarVenta(manualId: string, email: string, pagoId: string) {
     return; 
   }
 
-  // 4. Enviar correo
-  try {
-    await enviarEmailCompra({
-      emailComprador: email,
-      tituloManual: manual.titulo,
-      tokenDescarga: tokenDescarga,
-      precioARS: manual.precio_ars ?? 0, // NUEVO: Fallback a 0 por si viene null
-    });
-  } catch (emailError) {
-    console.error('Error enviando el email de compra:', emailError);
-  }
+  // 4. Enviar correo (COMENTADO TEMPORALMENTE PARA MVP MANUAL)
+  // try {
+  //   await enviarEmailCompra({
+  //     emailComprador: email,
+  //     tituloManual: manual.titulo,
+  //     tokenDescarga: tokenDescarga,
+  //     precioARS: manual.precio_ars ?? 0,
+  //   });
+  // } catch (emailError) {
+  //   console.error('Error enviando el email de compra:', emailError);
+  // }
 }
